@@ -1,0 +1,99 @@
+body {
+    
+    background-color: lightgrey
+}
+
+.title {
+    font-family: Brush Script MT, Brush Script Std, cursive;
+    font-size: 60px;
+    color: #000000;
+    padding: 20px;
+}
+.container {
+    padding: 5px;
+    color: white;
+}
+
+.burger-title {
+    color: lightgrey;
+        margin-top: 10px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+}
+#burgerlist {
+    margin: 10px;
+    height: 300px;
+    overflow: auto;
+    background-color: green;
+}
+
+#devouredlist {
+    margin: 10px;
+    height: 300px;
+    overflow: auto;
+    background-color: purple;
+}
+
+
+
+#burgerSubmit {
+    font-size: 20px;
+    height: 40px;
+    margin: 0 auto; 
+    width: 200px;
+    padding: 10px;
+    color: #000000;
+    background-color: deeppink;
+}
+
+#burgerSubmit:hover {
+    border: 3px solid #62EDD6;
+    color: #000000;
+    background-color:#ffffff;
+}
+.burgersAvailable {
+    overflow: hidden;
+    font-size: 20px;
+    margin: 8px;
+    border: 2px solid #62EDD6;
+    padding: 3px;
+}
+
+.burgersDevoured {
+    font-size: 20px;
+    margin: 8px;
+    border: 2px solid #FE65B7;
+    padding: 3px;
+}
+
+#burgerReady {
+    float: right;
+    border-radius: 8px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    background-color: #62EDD6;
+}
+
+#burgerReady:hover {
+    color: #000000;
+    border: 3px solid #62EDD6;
+    background-color: rgb(255, 255, 255);
+}
+
+#burgerAdd{
+    margin: 0 auto; 
+    width: 250px;
+    margin-bottom: 50px;
+}
+
+#burgerEnter {
+    font-size: 25px;
+    width: 200px;
+    height: 50px;
+    align-content: center;
+    color: #000000;
+    background-color: white;   
+}
+
+
+

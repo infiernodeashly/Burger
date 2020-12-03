@@ -1,43 +1,38 @@
-<div id="headerSection">
-  <h2>Eat Da Burger</h2>
-</div>
+<h1 class="title text-center">Eat-Da-Burger!</h1>
 
-<!-- Middle Section -->
-<div id="middleSection">
-
-  <!-- Left  -->
-  <div class="leftMiddle">
-    <div class="uneaten center">
-      {{#each burger}}
-      {{#unless devoured}}
-      {{> burgers/burgerBlock devoured=1}}
+<div class="container">
+  <div class="row">
+    <div class="col" id="burgerlist">
+      <h2 class="burger-title text-center">Burgers Available</h2>
+      {{#each burgers}}
+      {{#unless this.devoured}}
+      {{!-- List of burgers available to eat --}}
+      <div class="burgersAvailable">
+        <form action="/burgers/{{this.id}}?_method=PUT" method="POST" class="update-button">
+          {{this.burger_name}}
+          <button type="submit" class="btn- btn-default" id="burgerReady">DEVOUR IT</button>
+        </form>
+      </div>
       {{/unless}}
       {{/each}}
     </div>
-  </div>
-
-  <!-- Center -->
-  <div class="centerMiddle">
-    <div class="center">
-      <input id="burgerName" type="text" placeholder="Name of Your Burger" data-eaten="0">
-      <button id="addBurger" type="button">Add Your Burger</button>
-    </div>
-  </div>
-
-  <!-- Right -->
-  <div class="rightMiddle">
-    <div class="eaten center">
-      {{#each burger}}
-      {{#if devoured}}
-      {{> burgers/burgerBlock devoured=0}}
+    {{!-- list of divoured burgers --}}
+    <div class="col" id="devouredlist">
+      <h2 class="burger-title text-center">Burgers Devoured</h2>
+      {{#each burgers}}
+      {{#if this.devoured}}
+      <div class="burgersDevoured">
+        {{this.burger_name}}
+      </div>
       {{/if}}
       {{/each}}
     </div>
   </div>
-
 </div>
-<!-- End of Middle Section -->
 
-<div id="footerSection">
-  <p>Created By Ashly</p>
-</div>
+<form id="burgerAdd" action="/burgers" class="create-form" method="POST">
+  <div class="form-group col-md-8">
+    <input type="text" id="burgerEnter" name="burger_name" class="form-control">
+    <button type="submit" class="btn btn-default" id="burgerSubmit">ADD BURGER</button>
+  </div>
+</form>
